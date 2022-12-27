@@ -56,6 +56,29 @@ body{
         transform: translateX(-10%);
     }
 }
+
+
+.notification .toast.hide{
+    animation: hide_toast 0.3s ease forwards;
+
+}
+
+@keyframes hide_toast {
+    0%{
+        transform: translateX(-10%);
+    }
+    40%{
+        transform: translateX(0%);
+    }
+    80%{
+        transform: translateX(-5%);
+    }
+    100%{
+        transform: translateX(calc(100% + 20px));
+    }
+}
+
+
 .toast::before{
     position: absolute;
     content: "";
@@ -120,4 +143,20 @@ body{
     font-size: 1.2rem;
     padding: 10px 20px;
     border-radius: 4px;
+}
+
+@media screen and (max-width: 530px){
+    .notification{
+       width: 95%;
+    }
+    .notification .toast{
+        width: 100%;
+        font-size: 1rem;
+        margin-left: 55px;
+    }
+    .buttons .btn{
+        margin: 0 1px;
+        font-size: 1.1rem;
+        padding: 8px 15px;
+    }
 }
